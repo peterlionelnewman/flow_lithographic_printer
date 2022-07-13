@@ -1,0 +1,91 @@
+;
+;   Device installation file for 
+;   USB 2 COM port emulation
+;
+;
+;
+[Version] 
+Signature="$Windows NT$" 
+Class=Ports
+ClassGuid={4D36E978-E325-11CE-BFC1-08002BE10318} 
+Provider=%MFGNAME% 
+LayoutFile=layout.inf
+DriverVer=02/02/2015,5.1.2600.2
+CatalogFile=cobolt_laser.cat
+
+[Manufacturer] 
+%MFGNAME%=CDCDevice, NTamd64
+
+[DestinationDirs] 
+FakeModemCopyFileSection=12
+DefaultDestDir=12 
+
+[DriverServiceInst] 
+DisplayName=%SERVICE% 
+ServiceType=1
+StartType=3
+ErrorControl=1
+ServiceBinary=%12%\usbser.sys 
+
+;------------------------------------------------------------------------------
+;  32bit Sections
+;------------------------------------------------------------------------------
+
+[DefaultInstall.nt]
+CopyINF=cobolt_laser.inf
+
+[DriverInstall.nt] 
+include=mdmcpq.inf
+CopyFiles=FakeModemCopyFileSection
+AddReg=DriverInstall.nt.AddReg 
+
+[DriverInstall.nt.AddReg] 
+HKR,,DevLoader,,*ntkern 
+HKR,,NTMPDriver,,usbser.sys 
+HKR,,EnumPropPages32,,"MsPorts.dll,SerialPortPropPageProvider" 
+
+[DriverInstall.nt.Services] 
+AddService=usbser, 0x00000002, DriverServiceInst
+
+;------------------------------------------------------------------------------
+;  64bit Sections
+;------------------------------------------------------------------------------
+
+[DefaultInstall.NTamd64]
+CopyINF=cobolt_laser.inf
+
+[DriverInstall.NTamd64] 
+include=mdmcpq.inf
+CopyFiles=FakeModemCopyFileSection
+AddReg=DriverInstall.NTamd64.AddReg 
+
+[DriverInstall.NTamd64.AddReg] 
+HKR,,DevLoader,,*ntkern 
+HKR,,NTMPDriver,,usbser.sys 
+HKR,,EnumPropPages32,,"MsPorts.dll,SerialPortPropPageProvider" 
+
+[DriverInstall.NTamd64.Services] 
+AddService=usbser, 0x00000002, DriverServiceInst
+
+
+[SourceDisksFiles]
+[SourceDisksNames]
+[CDCDevice]
+%DESCRIPTION1%=DriverInstall,USB\VID_25Dc&PID_0005
+%DESCRIPTION2%=DriverInstall,USB\VID_25Dc&PID_0006
+%DESCRIPTION3%=DriverInstall,USB\VID_25Dc&PID_0007
+%DESCRIPTION4%=DriverInstall,USB\VID_25Dc&PID_0008
+
+[CDCDevice.NTamd64] 
+%DESCRIPTION1%=DriverInstall,USB\VID_25Dc&PID_0005
+%DESCRIPTION2%=DriverInstall,USB\VID_25Dc&PID_0006
+%DESCRIPTION3%=DriverInstall,USB\VID_25Dc&PID_0007
+%DESCRIPTION4%=DriverInstall,USB\VID_25Dc&PID_0008
+
+[Strings]
+MFGNAME="Cobolt AB"
+SERVICE="USB CDC serial port emulation"
+DESCRIPTION1 = "Cobolt Laser"
+DESCRIPTION2 = "Cobolt Laser"
+DESCRIPTION3 = "Cobolt Laser"
+DESCRIPTION4 = "Cobolt Laser"
