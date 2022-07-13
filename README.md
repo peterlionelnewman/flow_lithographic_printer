@@ -24,16 +24,20 @@ This software has been written for use with the controllers and hardware listed 
 
 
 When run a loading screen will be shown:
+
 <img src="https://github.com/peterlionelnewman/flow_lithographic_printer/blob/main/instruction_images/img_1.png" width="500" title="img_1" align="center" vspace = "50">
 
 
 During successful startup terminal will print connection and initialization confirmation for all controllers:
+
 <img src="https://github.com/peterlionelnewman/flow_lithographic_printer/blob/main/instruction_images/img_2.png" width="500" title="img_2" align="center" vspace = "50">
 
 
 And the GUI will show with ‘camera tab’ view as default:
+
 <img src="https://github.com/peterlionelnewman/flow_lithographic_printer/blob/main/instruction_images/img_3.png" width="500" title="img_3" align="center" vspace = "50">
 
 
 gcode can then be uploaded for printing via the ‘printer’ tab:
  
+<img src="https://github.com/peterlionelnewman/flow_lithographic_printer/blob/main/instruction_images/img_4.png" width="500" title="img_4" align="center" vspace = "50">
