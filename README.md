@@ -1,7 +1,12 @@
 # <p>  <b>Flow lithographic printer custom software </b> </p>
 Supporting printer code for the flow lithographic printer in Newman et al
 
-We recommend reviewing instruction for printer use (with relevant hardware information) along with supporting images available in the manuscript supporting information, currently in preprint: https://www.biorxiv.org/content/10.1101/2021.02.10.430691v3
+We recommend reviewing instruction for printer use (with relevant hardware information) along with supporting images available in the manuscript supporting information.
+
+- Written by: Pete, 2022, (peterlionelnewman)
+- Paper doi: doi.org/10.1002/advs.202204741
+- Paper url: https://onlinelibrary.wiley.com/doi/10.1002/advs.202204741
+- Cite us if you use any part of this script in anyway :-)
 
 Github code and supporting materials can be found at the repository: https://github.com/peterlionelnewman/flow_lithographic_printer 
 Software, installation, and use:
